@@ -9,8 +9,14 @@ interface Props {
 function VideoList({ videoList, isActive = false }: Props) {
   return (
     <div style={{ display: isActive ? "" : "none" }}>
-      {videoList.map(({ title, cover, url }) => (
-        <VideoPlayer key={title} url={url} poster={cover} isActive={isActive} />
+      {videoList.map(({ title, cover, url }, index) => (
+        <VideoPlayer
+          key={title}
+          url={url}
+          poster={cover}
+          isActive={isActive}
+          index={index}
+        />
       ))}
     </div>
   );

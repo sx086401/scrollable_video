@@ -5,6 +5,8 @@ import Tab from "./components/Tab";
 import { TabType } from "./types";
 import VideoList from "./app/VideoList";
 
+export const topTabOffset = 35;
+
 function App() {
   const { followingList, forYouList } = useContext(videoContext);
   const [tab, setTab] = useState<TabType>(TabType.Following);
@@ -19,7 +21,7 @@ function App() {
         style={{
           display: "flex",
           justifyContent: "center",
-          marginBottom: "5px",
+          height: topTabOffset,
         }}
       >
         <Tab
